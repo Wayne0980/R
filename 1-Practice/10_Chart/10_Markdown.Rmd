@@ -1,0 +1,40 @@
+---
+title: "MTest"
+author: "Wayne"
+date: "2017???9???5???"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+```{r AoeStatistics, echo=FALSE}
+library(ggplot2)
+AoeStatistics <- data.frame(
+   ethnic = c("Aisa", "Japan", "Afica", "WriteMan", "BlackMan", "YellowMan", "USA", "England", "Monkey", "BirdMan", "Baboon", "Turtal", "KeyMan", "Chairman", "awesome", "someone"),
+   goal = c(25, 25, 25, 25, 30, 20, 20, 30, 40, 10, 40, 10, 30, 0, 20, 50),
+   centry = c(-3000, -3000, -3000, -3000, -1000, -1000, -1000, -1000, 0, 0, 0, 0, 500, 500, 500, 500))
+ggplot(AoeStatistics, aes(x = centry, y = goal, fill =ethnic)) +
+geom_area(colour = "black", size = .2, alpha = .4) +
+scale_fill_brewer(palette = "Blues", breaks = rev(levels(AoeStatistics$ethnic)))
+```
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
